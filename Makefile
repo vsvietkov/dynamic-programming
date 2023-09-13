@@ -7,6 +7,9 @@ docker-run := docker run $(tty-options) --rm -v ${PWD}:/$(workdir) $(imagename)
 docker-build:
 	@docker build --build-arg workdir=$(workdir) . -t $(imagename)
 
+docker-build-dev:
+	@docker build --build-arg workdir=$(workdir) --build-arg XDEBUG_INSTALL=1 . -t $(imagename)
+
 install:
 	@$(docker-run) bash -c "composer install && composer dump-autoload"
 
