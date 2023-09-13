@@ -19,4 +19,4 @@ jobs:
         run: make run-cs tty-options=
 
       - name: Run tests
-        run: make test tty-options=
+        run: make test tty-options= coverage-options=

@@ -1,6 +1,7 @@
 imagename := vsvietkov-dynamic-programming
 workdir := /dynamic-programming
 tty-options := -it # Enable color output locally, disable for github
+coverage-options := --coverage-html results/phpunit/ --coverage-clover results/phpunit/coverage.xml
 
 docker-run := docker run $(tty-options) --rm -v ${PWD}:/$(workdir) $(imagename)
 
@@ -17,7 +18,7 @@ update:
 	@$(docker-run) bash -c "composer update && composer dump-autoload"
 
 test:
-	@$(docker-run) vendor/bin/phpunit tests --colors --testdox --coverage-html results/phpunit/ --coverage-clover results/phpunit/coverage.xml --log-junit results/phpunit/phpunit.xml --log-events-verbose-text results/phpunit/verbose-log.txt
+	@$(docker-run) vendor/bin/phpunit tests --colors --testdox $(coverage-options) --log-junit results/phpunit/phpunit.xml --log-events-verbose-text results/phpunit/verbose-log.txt
 
 autoload:
 	@$(docker-run) composer dump-autoload
