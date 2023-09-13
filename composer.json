@@ -1,0 +1,23 @@
+{
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "git@github.com:vsvietkov/phpcs-rules.git"
+    }
+  ],
+  "autoload": {
+    "classmap": [
+      "src/"
+    ],
+    "psr-4": {
+      "Vsvietkov\\DP\\Interfaces\\": "src/Interfaces/PHP",
+      "Vsvietkov\\DP\\Problems\\Fibonacci\\Memoization\\": "src/Problems/Fibonacci/Memoization/PHP",
+
+      "Vsvietkov\\DP\\Tests\\Fibonacci\\": "tests/Fibonacci/PHP"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^10",
+    "vsvietkov/phpcs-rules": "1.*"
+  }
+}
