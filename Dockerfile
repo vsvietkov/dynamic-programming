@@ -13,4 +13,8 @@ RUN if [ ! -z "${XDEBUG_INSTALL}" ]; then \
     && echo "xdebug.mode=${XDEBUG_MODE}" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
 ;fi
 
+RUN if [ "${XDEBUG_MODE}" = "profile" ]; then \
+    echo "xdebug.output_dir=${workdir}/results/profiling" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini\
+;fi
+
 WORKDIR ${workdir}

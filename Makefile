@@ -11,6 +11,10 @@ docker-build:
 docker-build-dev:
 	@docker build --build-arg workdir=$(workdir) --build-arg XDEBUG_INSTALL=1 . -t $(imagename)
 
+docker-build-profiling:
+	@docker build --build-arg workdir=$(workdir) --build-arg XDEBUG_INSTALL=1 --build-arg XDEBUG_MODE=profile . -t $(imagename)
+	@$(docker-run) bash -c "mkdir -p results/profiling"
+
 install:
 	@$(docker-run) bash -c "composer install && composer dump-autoload"
 
