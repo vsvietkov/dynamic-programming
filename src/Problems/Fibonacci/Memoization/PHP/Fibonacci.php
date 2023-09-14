@@ -21,8 +21,6 @@ class Fibonacci implements IProblem
             ? $this->getFib($n - 2, $memo) + $this->getFib($n - 1, $memo)
             : $this->getFib($n + 2, $memo) - $this->getFib($n + 1, $memo);
         // Memoize the result for future use
-        $memo[$n] = $result;
-
-        return $result;
+        return $memo[$n] = $result;
     }
 }
