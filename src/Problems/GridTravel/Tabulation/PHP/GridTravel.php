@@ -6,5 +6,4 @@ use Vsvietkov\DP\Interfaces\IProblem;
 
 class GridTravel implements IProblem
 {
-
 }
