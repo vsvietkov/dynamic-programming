@@ -11,11 +11,11 @@ use Vsvietkov\DP\Problems\Fibonacci\Memoization\Fibonacci;
 /** @covers \Vsvietkov\DP\Problems\Fibonacci\Memoization\Fibonacci */
 class FibonacciMemoizationTest extends TestCase
 {
-    private Fibonacci $fibonacci;
+    private static Fibonacci $fibonacci;
 
-    protected function setUp(): void
+    public static function setUpBeforeClass(): void
     {
-        $this->fibonacci = new Fibonacci();
+        self::$fibonacci = new Fibonacci();
     }
 
     public static function getFibDataProvider(): array
@@ -34,8 +34,8 @@ class FibonacciMemoizationTest extends TestCase
     }
 
     #[DataProvider('getFibDataProvider')]
-    public function testGetFib($n, $expectedResult): void
+    public function testGetFib(int $n, int $expectedResult): void
     {
-        $this->assertEquals($expectedResult, $this->fibonacci->getFib($n));
+        $this->assertEquals($expectedResult, self::$fibonacci->getFib($n));
     }
 }

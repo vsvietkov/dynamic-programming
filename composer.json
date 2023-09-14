@@ -13,8 +13,11 @@
       "Vsvietkov\\DP\\Interfaces\\": "src/Interfaces/PHP",
       "Vsvietkov\\DP\\Problems\\Fibonacci\\Memoization\\": "src/Problems/Fibonacci/Memoization/PHP",
       "Vsvietkov\\DP\\Problems\\Fibonacci\\Tabulation\\": "src/Problems/Fibonacci/Tabulation/PHP",
+      "Vsvietkov\\DP\\Problems\\GridTravel\\Memoization\\": "src/Problems/GridTravel/Memoization/PHP",
+      "Vsvietkov\\DP\\Problems\\GridTravel\\Tabulation\\": "src/Problems/GridTravel/Tabulation/PHP",
 
-      "Vsvietkov\\DP\\Tests\\Fibonacci\\": "tests/Fibonacci/PHP"
+      "Vsvietkov\\DP\\Tests\\Fibonacci\\": "tests/Fibonacci/PHP",
+      "Vsvietkov\\DP\\Tests\\GridTravel\\": "tests/GridTravel/PHP"
     }
   },
   "require-dev": {

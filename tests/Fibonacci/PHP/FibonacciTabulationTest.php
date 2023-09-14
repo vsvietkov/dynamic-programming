@@ -11,16 +11,16 @@ use Vsvietkov\DP\Problems\Fibonacci\Tabulation\Fibonacci;
 /** @covers \Vsvietkov\DP\Problems\Fibonacci\Tabulation\Fibonacci */
 class FibonacciTabulationTest extends TestCase
 {
-    private Fibonacci $fibonacci;
+    private static Fibonacci $fibonacci;
 
-    protected function setUp(): void
+    public static function setUpBeforeClass(): void
     {
-        $this->fibonacci = new Fibonacci();
+        self::$fibonacci = new Fibonacci();
     }
 
     #[DataProviderExternal(FibonacciMemoizationTest::class, 'getFibDataProvider')]
-    public function testGetFib($n, $expectedResult): void
+    public function testGetFib(int $n, int $expectedResult): void
     {
-        $this->assertEquals($expectedResult, $this->fibonacci->getFib($n));
+        $this->assertEquals($expectedResult, self::$fibonacci->getFib($n));
     }
 }
