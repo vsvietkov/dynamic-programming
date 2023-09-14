@@ -21,6 +21,7 @@ class GridTravelMemoizationTest extends TestCase
     public static function gridTravelDataProvider(): array
     {
         return [
+            [0, 1, 0],
             [1, 1, 1],
             [2, 3, 3],
             [3, 2, 3],
@@ -30,7 +31,7 @@ class GridTravelMemoizationTest extends TestCase
     }
 
     #[DataProvider('gridTravelDataProvider')]
-    public function testGetFib(int $rows, int $cols, int $expectedResult): void
+    public function testTravel(int $rows, int $cols, int $expectedResult): void
     {
         $this->assertEquals($expectedResult, self::$gridTravel->travel($rows, $cols));
     }
